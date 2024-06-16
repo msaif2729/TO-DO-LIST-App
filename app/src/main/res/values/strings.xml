@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TO-DO LIST</string>
+    <string name="qoute">Each checkmark on your to-do list \nis a step towards your goals.</string>
+    <string name="forgot">Forgot Password?</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+</resources>

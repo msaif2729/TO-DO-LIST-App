@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single"
+        >
+        <item
+            android:id="@+id/home"
+            android:title="Home"
+            android:icon="@drawable/home"
+            android:checkable="true"
+            android:iconTint="@color/colorPrimary"
+            />
+        <item
+            android:id="@+id/fav"
+            android:title="Favourite"
+            android:icon="@drawable/star"
+            android:checkable="true"
+            android:iconTint="@color/colorPrimary"
+            />
+        <item
+            android:icon="@drawable/editing"
+            android:title="Add Task"
+            android:id="@+id/add"
+            android:checkable="true"
+            android:iconTint="@color/colorPrimary"
+            />
+        <item
+            android:id="@+id/logout"
+            android:checkable="true"
+            android:title="Logout"
+            android:icon="@drawable/logout"
+            android:iconTint="@color/colorPrimary"
+            />
+    </group>
+
+</menu>
