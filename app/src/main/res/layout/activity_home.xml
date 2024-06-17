@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Home"
     android:id="@+id/drawerlayout"
-    android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -42,6 +41,7 @@
         android:background="@color/white"
         app:itemTextColor="@color/black"
         app:itemIconTint="@color/colorPrimary"
+        app:itemTextAppearanceActiveBoldEnabled="true"
         />
 
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:paddingVertical="40dp"
-    android:paddingHorizontal="45dp"
-    android:background="@color/colorPrimary">
+    android:padding="24dp"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/header"
@@ -14,19 +14,18 @@
         android:text="Header"
         android:textColor="@color/white"
         android:fontFamily="@font/ubuntubold"
-        android:textSize="25dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
         />
     <TextView
         android:id="@+id/subheader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/header"
         android:text="Subheader"
-        android:textSize="20dp"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
         android:fontFamily="@font/ubuntumedium"
         android:layout_marginTop="10dp"
         android:textColor="@color/white"
         />
 
 
-</RelativeLayout>
+</LinearLayout>

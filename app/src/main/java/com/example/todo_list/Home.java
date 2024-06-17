@@ -31,7 +31,6 @@ public class Home extends AppCompatActivity {
         topbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Home.this, "Navigation Clicked", Toast.LENGTH_SHORT).show();
                 drawerLayout.open();
             }
         });
@@ -40,8 +39,24 @@ public class Home extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                drawerLayout.close();
-                return false;
+                item.setChecked(true);
+
+               if(item.getItemId()==R.id.home)
+               {
+                   Toast.makeText(Home.this, "Home", Toast.LENGTH_SHORT).show();
+               }
+               else if(item.getItemId()==R.id.fav)
+               {
+                   Toast.makeText(Home.this, "Favourite", Toast.LENGTH_SHORT).show();
+               } else if (item.getItemId()==R.id.add) {
+                   Toast.makeText(Home.this, "Add Task", Toast.LENGTH_SHORT).show();
+               }
+               else if(item.getItemId()==R.id.logout)
+               {
+                   Toast.makeText(Home.this, "Logout", Toast.LENGTH_SHORT).show();
+               }
+
+                return true;
             }
         });
 
