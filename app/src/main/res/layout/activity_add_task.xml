@@ -98,6 +98,8 @@
           />
    </LinearLayout>
 
+
+
    <TextView
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
@@ -127,9 +129,27 @@
    <TextView
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
+       android:text="Task Priotity"
+       android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+       android:id="@+id/ttp"
+       android:layout_marginTop="10dp"
+       android:layout_below="@id/taskdesc"
+       />
+
+   <Spinner
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+      android:layout_below="@id/ttp"
+      android:id="@+id/taskpriority"
+       android:layout_marginTop="5dp"
+       android:autofillHints="Select task Priority"/>
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
       android:text="Color"
       android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-      android:layout_below="@id/taskdesc"
+      android:layout_below="@id/taskpriority"
       android:layout_marginTop="10dp"
        android:id="@+id/tc"
       />
