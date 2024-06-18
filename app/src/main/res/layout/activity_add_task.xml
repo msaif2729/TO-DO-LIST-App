@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddTask"
+    android:background="@color/white"
+    android:padding="15dp">
+
+   <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Task Name"
+      android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+      android:id="@+id/ttname"
+      />
+
+
+   <EditText
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/taskname"
+       android:hint="Enter Task Name"
+       android:paddingVertical="15dp"
+       android:paddingHorizontal="8dp"
+       android:background="@drawable/edittextback"
+       android:layout_below="@id/ttname"
+       android:layout_marginTop="5dp"
+       />
+
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:weightSum="2"
+       android:layout_below="@id/taskname"
+       android:orientation="horizontal"
+       android:id="@+id/l1">
+
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Date"
+       android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+       android:id="@+id/ttd"
+       android:layout_marginTop="20dp"
+       android:layout_below="@id/taskname"
+       android:layout_weight="1"
+
+       />
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Time"
+       android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+       android:id="@+id/ttt"
+       android:layout_marginTop="20dp"
+       android:layout_below="@id/taskname"
+       android:layout_weight="1"
+       />
+
+
+   </LinearLayout>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+      android:weightSum="2"
+       android:layout_below="@id/l1"
+       android:layout_marginTop="5dp"
+       android:id="@+id/l2"
+      >
+      <EditText
+          android:layout_height="wrap_content"
+          android:id="@+id/taskdate"
+          android:layout_width="wrap_content"
+          android:hint="Select Date"
+          android:paddingVertical="15dp"
+          android:paddingHorizontal="8dp"
+          android:background="@drawable/edittextback"
+          android:layout_below="@id/ttd"
+          android:layout_weight="1"
+          android:drawableEnd="@drawable/calendar"
+          android:layout_marginEnd="10dp"
+          />
+      <EditText
+          android:layout_height="wrap_content"
+          android:id="@+id/tasktime"
+          android:layout_width="wrap_content"
+          android:layout_weight="1"
+          android:hint="Select Time"
+          android:paddingVertical="15dp"
+          android:paddingHorizontal="8dp"
+          android:background="@drawable/edittextback"
+          android:drawableEnd="@drawable/clock"
+          />
+   </LinearLayout>
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Task Description"
+       android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+       android:id="@+id/ttdes"
+       android:layout_marginTop="10dp"
+       android:layout_below="@id/l2"
+       />
+
+
+   <EditText
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/taskdesc"
+       android:hint="Enter Task Description"
+       android:paddingVertical="15dp"
+       android:paddingHorizontal="8dp"
+       android:background="@drawable/edittextback"
+       android:layout_below="@id/ttdes"
+       android:layout_marginTop="5dp"
+       android:inputType="textMultiLine"
+       android:lines="5"
+       android:gravity="top|start"
+       />
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+      android:text="Color"
+      android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+      android:layout_below="@id/taskdesc"
+      android:layout_marginTop="10dp"
+       android:id="@+id/tc"
+      />
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+      android:id="@+id/l3"
+      android:layout_below="@id/tc"
+      android:layout_marginTop="5dp"
+       android:orientation="horizontal"
+       android:gravity="center">
+
+      <View
+          android:layout_width="35dp"
+          android:layout_height="35dp"
+         android:background="@drawable/colorback"
+         android:backgroundTint="@color/c1"
+          android:id="@+id/cv1"
+          android:layout_marginHorizontal="3dp"
+         />
+      <View
+          android:layout_width="35dp"
+          android:layout_height="35dp"
+          android:background="@drawable/colorback"
+          android:backgroundTint="@color/c2"
+          android:id="@+id/cv2"
+          android:layout_marginHorizontal="3dp"
+          />
+      <View
+          android:layout_width="35dp"
+          android:layout_height="35dp"
+          android:background="@drawable/colorback"
+          android:backgroundTint="@color/c3"
+          android:id="@+id/cv3"
+          android:layout_marginHorizontal="3dp"
+          />
+      <View
+          android:layout_width="35dp"
+          android:layout_height="35dp"
+          android:background="@drawable/colorback"
+          android:backgroundTint="@color/c4"
+          android:id="@+id/cv4"
+          android:layout_marginHorizontal="3dp"
+          />
+      <View
+          android:layout_width="35dp"
+          android:layout_height="35dp"
+          android:background="@drawable/colorback"
+          android:backgroundTint="@color/c5"
+          android:id="@+id/cv5"
+          android:layout_marginHorizontal="3dp"
+          />
+      <View
+          android:layout_width="35dp"
+          android:layout_height="35dp"
+          android:background="@drawable/colorback"
+          android:backgroundTint="@color/c6"
+          android:id="@+id/cv6"
+          android:layout_marginHorizontal="3dp"
+          />
+      <View
+          android:layout_width="35dp"
+          android:layout_height="35dp"
+          android:background="@drawable/colorback"
+          android:backgroundTint="@color/c7"
+          android:id="@+id/cv7"
+          android:layout_marginHorizontal="3dp"
+          />
+      <View
+          android:layout_width="35dp"
+          android:layout_height="35dp"
+          android:background="@drawable/colorwheel1"
+          android:id="@+id/cw"
+          android:layout_marginHorizontal="3dp"
+          />
+
+
+
+   </LinearLayout>
+
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+      android:text="ADD TASK"
+      android:background="@drawable/button"
+      android:layout_below="@id/l3"
+      android:layout_marginTop="18dp"
+      android:id="@+id/addtask"
+      />
+
+</RelativeLayout>

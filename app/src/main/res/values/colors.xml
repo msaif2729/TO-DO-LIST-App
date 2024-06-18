@@ -11,4 +11,11 @@
     <color name="lightyellow">#28FFF000</color>
     <color name="lightgreen">#282DD100</color>
     <color name="lightblue">#9DCEF3</color>
+    <color name="c1">#FBAEAE</color>
+    <color name="c2">#EDD2FF</color>
+    <color name="c3">#FFEED0</color>
+    <color name="c4">#FFE0B2</color>
+    <color name="c5">#D7F7FF</color>
+    <color name="c6">#EDFDD2</color>
+    <color name="c7">#CFD7FF</color>
 </resources>

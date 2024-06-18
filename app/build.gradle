@@ -41,5 +41,9 @@ dependencies {
     //for Gif
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.28'
 
+    //colorpicker
+    implementation 'com.github.yukuku:ambilwarna:2.0.1'
+
+
 
 }
