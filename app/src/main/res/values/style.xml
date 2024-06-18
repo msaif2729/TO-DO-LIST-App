@@ -6,6 +6,10 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/white</item>
         <item name="android:textColorPrimary">@color/black</item>
-        <item name="fontFamily">@font/ubuntumedium</item>
+        <item name="fontFamily">@font/ubuntubold</item>
+        <item name="colorControlHighlight">@color/black</item>
+        <item name="statusBarBackground">@color/white</item>
     </style>
+
+
 </resources>

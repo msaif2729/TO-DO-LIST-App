@@ -99,6 +99,7 @@
            android:layout_marginTop="15dp"
            android:background="@drawable/button"
            android:textColor="@color/white"
+           android:backgroundTint="@color/colorPrimary"
            />
        <View
             android:layout_width="match_parent"

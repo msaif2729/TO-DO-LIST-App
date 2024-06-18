@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Home"
     android:id="@+id/drawerlayout"
-    tools:openDrawer="start">
+    tools:openDrawer="end">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -17,6 +17,8 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             app:liftOnScroll="true"
+            app:liftOnScrollColor="@color/lightgray"
+            android:id="@+id/appbar"
             >
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/topbar"
@@ -29,6 +31,218 @@
                 app:menu="@menu/menu"
                 />
         </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingHorizontal="5dp">
+
+                <TextView
+                    android:id="@+id/welcometxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hi User"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:paddingVertical="5dp"
+                    android:paddingHorizontal="10dp"
+                    android:fontFamily="@font/ubuntubold"
+                    />
+<!--                <TextView-->
+<!--                    android:id="@+id/taskhave"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="You don't have any task yet!!!"-->
+<!--                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"-->
+<!--                    android:paddingVertical="5dp"-->
+<!--                    android:paddingHorizontal="10dp"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    />-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Search Task"
+                    android:id="@+id/searcht"
+                    app:startIconDrawable="@android:drawable/ic_menu_search"
+                    app:startIconTint="@color/colorPrimary"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="10dp"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+                        android:textColor="@color/black"
+                        android:id="@+id/search"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:weightSum="3"
+                    >
+                    <RelativeLayout
+                        android:layout_width="80dp"
+                        android:layout_height="130dp"
+                        android:background="@drawable/todobtn"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="10dp"
+                        android:padding="20dp"
+                        >
+                        <ImageView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:src="@drawable/todo"
+                            android:padding="10dp"
+                            android:background="@drawable/todoimg"
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/todoimg"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="TODO"
+                            android:gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/ubuntubold"
+                            android:textSize="15dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@id/todoimg"
+                            />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="80dp"
+                        android:layout_height="130dp"
+                        android:background="@drawable/todobtn"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="10dp"
+                        >
+                        <ImageView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:src="@drawable/prog"
+                            android:padding="10dp"
+                            android:background="@drawable/progimg"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/progimg"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="PROGRESS"
+                            android:gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/ubuntubold"
+                            android:textSize="15dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@id/progimg"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="80dp"
+                        android:layout_height="130dp"
+                        android:background="@drawable/todobtn"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="10dp"
+                        android:padding="20dp"
+                        >
+                        <ImageView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:src="@drawable/done1"
+                            android:padding="10dp"
+                            android:background="@drawable/doneimg"
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/doneimg"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="DONE"
+                            android:gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/ubuntubold"
+                            android:textSize="15dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@id/doneimg"
+                            />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="All Tasks"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:textColor="@color/black" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    >
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/recycleview"
+                        android:visibility="gone"/>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/recycleback"
+                        android:backgroundTint="@color/lightblue"
+                        android:padding="60dp"
+                        >
+
+                        <TextView
+                            android:id="@+id/taks1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ubuntumedium"
+                            android:gravity="center"
+                            android:text="You don't have any task!!"
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/taks1"
+                            android:fontFamily="@font/ubuntumedium"
+                            android:gravity="center"
+                            android:text="Click here to create One"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+
+
+                        />
+
+                    </RelativeLayout>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.navigation.NavigationView
@@ -41,9 +255,7 @@
         android:background="@color/white"
         app:itemTextColor="@color/black"
         app:itemIconTint="@color/colorPrimary"
-        app:itemTextAppearanceActiveBoldEnabled="true"
+        app:itemBackground="@drawable/navback"
         />
-
-
 
 </androidx.drawerlayout.widget.DrawerLayout>

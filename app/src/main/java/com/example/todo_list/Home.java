@@ -28,6 +28,11 @@ public class Home extends AppCompatActivity {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);
         nav = (NavigationView) findViewById(R.id.nav);
 
+        if (savedInstanceState==null)
+        {
+            nav.setCheckedItem(R.id.home);
+        }
+
         topbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
