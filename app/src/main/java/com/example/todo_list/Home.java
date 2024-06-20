@@ -47,12 +47,14 @@ public class Home extends AppCompatActivity {
         r1 = (RelativeLayout) findViewById(R.id.r1);
         r2 = (RelativeLayout) findViewById(R.id.r2);
         r3 = (RelativeLayout) findViewById(R.id.r3);
+        nav.setCheckedItem(R.id.home);
 
 
         if (savedInstanceState==null)
         {
             nav.setCheckedItem(R.id.home);
         }
+
 
 
 
@@ -100,6 +102,8 @@ public class Home extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem item) {
 
                 Toast.makeText(Home.this, "Account Logo Clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Home.this, Profile.class);
+                startActivity(intent);
                 
                 return false;
             }
@@ -121,7 +125,7 @@ public class Home extends AppCompatActivity {
 
         for(int i=1;i<=7;i++)
         {
-            taskLists.add(new MyTaskList("Mobile Application","I want to develop some mobile application for completion of my codsoft intern","18/6/2024","06:20","HIGH",arr[i-1],"c"+String.valueOf(i)));
+            taskLists.add(new MyTaskList("Mobile Application","I want to develop some mobile application for completion of my codsoft intern","18/6/2024","06:20","HIGH",arr[i-1],R.color.c1));
         }
 
         recycleview.setAdapter(myadapter);

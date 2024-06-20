@@ -4,13 +4,14 @@
     <color name="black">#FF000000</color>
     <color name="colorPrimary">#2b8ad2</color>
     <color name="colorPrimaryDark">#277bbb</color>
-    <color name="colorAccent">#3CFFF000</color>
+    <color name="colorAccent">#FF000000</color>
     <color name="gray">#1E000000</color>
     <color name="lightgray">#34CCCCCC</color>
     <color name="lightred">#17FF0000</color>
     <color name="lightyellow">#28FFF000</color>
     <color name="lightgreen">#282DD100</color>
     <color name="lightblue">#9DCEF3</color>
+    <color name="red">#FF0000</color>
     <color name="c1">#FBAEAE</color>
     <color name="c2">#EDD2FF</color>
     <color name="c3">#FFEED0</color>
@@ -18,4 +19,5 @@
     <color name="c5">#D7F7FF</color>
     <color name="c6">#EDFDD2</color>
     <color name="c7">#CFD7FF</color>
+    <color name="colorPrimaryDisabled">#AAB4C2</color>
 </resources>

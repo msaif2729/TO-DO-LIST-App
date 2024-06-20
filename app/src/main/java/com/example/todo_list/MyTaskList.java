@@ -1,9 +1,10 @@
 package com.example.todo_list;
 
 public class MyTaskList {
-    private String taskname,taskdesc,taskdate,tasktime,taskpriority,taskstatus,taskcolor;
+    private String taskname,taskdesc,taskdate,tasktime,taskpriority,taskstatus;
+    private int taskcolor;
 
-    public MyTaskList(String taskname, String taskdesc, String taskdate, String tasktime, String taskpriority, String taskstatus,String taskcolor) {
+    public MyTaskList(String taskname, String taskdesc, String taskdate, String tasktime, String taskpriority, String taskstatus,int taskcolor) {
         this.taskname = taskname;
         this.taskdesc = taskdesc;
         this.taskdate = taskdate;
@@ -60,11 +61,11 @@ public class MyTaskList {
     public void setTaskstatus(String taskstatus) {
         this.taskstatus = taskstatus;
     }
-    public String getTaskcolor() {
+    public int getTaskcolor() {
         return taskcolor;
     }
 
-    public void setTaskcolor(String taskname) {
+    public void setTaskcolor(int taskcolor) {
         this.taskcolor = taskcolor;
     }
 

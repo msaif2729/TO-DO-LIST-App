@@ -84,6 +84,7 @@
           android:layout_weight="1"
           android:drawableEnd="@drawable/calendar"
           android:layout_marginEnd="10dp"
+
           />
       <EditText
           android:layout_height="wrap_content"
@@ -163,69 +164,183 @@
        android:orientation="horizontal"
        android:gravity="center">
 
-      <View
-          android:layout_width="35dp"
-          android:layout_height="35dp"
-         android:background="@drawable/colorback"
-         android:backgroundTint="@color/c1"
-          android:id="@+id/cv1"
-          android:layout_marginHorizontal="3dp"
-         />
-      <View
-          android:layout_width="35dp"
-          android:layout_height="35dp"
-          android:background="@drawable/colorback"
-          android:backgroundTint="@color/c2"
-          android:id="@+id/cv2"
-          android:layout_marginHorizontal="3dp"
-          />
-      <View
-          android:layout_width="35dp"
-          android:layout_height="35dp"
-          android:background="@drawable/colorback"
-          android:backgroundTint="@color/c3"
-          android:id="@+id/cv3"
-          android:layout_marginHorizontal="3dp"
-          />
-      <View
-          android:layout_width="35dp"
-          android:layout_height="35dp"
-          android:background="@drawable/colorback"
-          android:backgroundTint="@color/c4"
-          android:id="@+id/cv4"
-          android:layout_marginHorizontal="3dp"
-          />
-      <View
-          android:layout_width="35dp"
-          android:layout_height="35dp"
-          android:background="@drawable/colorback"
-          android:backgroundTint="@color/c5"
-          android:id="@+id/cv5"
-          android:layout_marginHorizontal="3dp"
-          />
-      <View
-          android:layout_width="35dp"
-          android:layout_height="35dp"
-          android:background="@drawable/colorback"
-          android:backgroundTint="@color/c6"
-          android:id="@+id/cv6"
-          android:layout_marginHorizontal="3dp"
-          />
-      <View
-          android:layout_width="35dp"
-          android:layout_height="35dp"
-          android:background="@drawable/colorback"
-          android:backgroundTint="@color/c7"
-          android:id="@+id/cv7"
-          android:layout_marginHorizontal="3dp"
-          />
-      <View
-          android:layout_width="35dp"
-          android:layout_height="35dp"
-          android:background="@drawable/colorwheel1"
-          android:id="@+id/cw"
-          android:layout_marginHorizontal="3dp"
-          />
+      <FrameLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content">
+
+         <!-- First View and ImageView pair -->
+         <View
+             android:layout_width="35dp"
+             android:layout_height="35dp"
+             android:background="@drawable/colorback"
+             android:backgroundTint="@color/c1"
+             android:id="@+id/cv1"
+             android:layout_marginHorizontal="3dp"
+             android:onClick="selectcolor" />
+         <ImageView
+             android:layout_width="40dp"
+             android:layout_height="35dp"
+             android:id="@+id/ci1"
+             android:src="@drawable/circle"
+             android:visibility="gone"
+             android:layout_gravity="center" />
+      </FrameLayout>
+
+      <FrameLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content">
+
+         <!-- Second View and ImageView pair -->
+         <View
+             android:layout_width="35dp"
+             android:layout_height="35dp"
+             android:background="@drawable/colorback"
+             android:backgroundTint="@color/c2"
+             android:id="@+id/cv2"
+             android:layout_marginHorizontal="3dp"
+             android:onClick="selectcolor" />
+         <ImageView
+             android:layout_width="40dp"
+             android:layout_height="35dp"
+             android:id="@+id/ci2"
+             android:src="@drawable/circle"
+             android:visibility="gone"
+             android:layout_gravity="center" />
+      </FrameLayout>
+
+      <FrameLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content">
+
+         <!-- Third View and ImageView pair -->
+         <View
+             android:layout_width="35dp"
+             android:layout_height="35dp"
+             android:background="@drawable/colorback"
+             android:backgroundTint="@color/c3"
+             android:id="@+id/cv3"
+             android:layout_marginHorizontal="3dp"
+             android:onClick="selectcolor" />
+         <ImageView
+             android:layout_width="40dp"
+             android:layout_height="35dp"
+             android:id="@+id/ci3"
+             android:src="@drawable/circle"
+             android:visibility="gone"
+             android:layout_gravity="center" />
+      </FrameLayout>
+
+      <FrameLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content">
+
+         <!-- Fourth View and ImageView pair -->
+         <View
+             android:layout_width="35dp"
+             android:layout_height="35dp"
+             android:background="@drawable/colorback"
+             android:backgroundTint="@color/c4"
+             android:id="@+id/cv4"
+             android:layout_marginHorizontal="3dp"
+             android:onClick="selectcolor" />
+         <ImageView
+             android:layout_width="40dp"
+             android:layout_height="35dp"
+             android:id="@+id/ci4"
+             android:src="@drawable/circle"
+             android:visibility="gone"
+             android:layout_gravity="center" />
+      </FrameLayout>
+
+      <FrameLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content">
+
+         <!-- Fifth View and ImageView pair -->
+         <View
+             android:layout_width="35dp"
+             android:layout_height="35dp"
+             android:background="@drawable/colorback"
+             android:backgroundTint="@color/c5"
+             android:id="@+id/cv5"
+             android:layout_marginHorizontal="3dp"
+             android:onClick="selectcolor" />
+         <ImageView
+             android:layout_width="40dp"
+             android:layout_height="35dp"
+             android:id="@+id/ci5"
+             android:src="@drawable/circle"
+             android:visibility="gone"
+             android:layout_gravity="center" />
+      </FrameLayout>
+
+      <FrameLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content">
+
+         <!-- Sixth View and ImageView pair -->
+         <View
+             android:layout_width="35dp"
+             android:layout_height="35dp"
+             android:background="@drawable/colorback"
+             android:backgroundTint="@color/c6"
+             android:id="@+id/cv6"
+             android:layout_marginHorizontal="3dp"
+             android:onClick="selectcolor" />
+         <ImageView
+             android:layout_width="40dp"
+             android:layout_height="35dp"
+             android:id="@+id/ci6"
+             android:src="@drawable/circle"
+             android:visibility="gone"
+             android:layout_gravity="center" />
+      </FrameLayout>
+
+      <FrameLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content">
+
+         <!-- Seventh View and ImageView pair -->
+         <View
+             android:layout_width="35dp"
+             android:layout_height="35dp"
+             android:background="@drawable/colorback"
+             android:backgroundTint="@color/c7"
+             android:id="@+id/cv7"
+             android:layout_marginHorizontal="3dp"
+             android:onClick="selectcolor" />
+         <ImageView
+             android:layout_width="40dp"
+             android:layout_height="35dp"
+             android:id="@+id/ci7"
+             android:src="@drawable/circle"
+             android:visibility="gone"
+             android:layout_gravity="center" />
+      </FrameLayout>
+
+      <FrameLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content">
+
+         <!-- Seventh View and ImageView pair -->
+         <View
+             android:layout_width="35dp"
+             android:layout_height="35dp"
+             android:background="@drawable/colorwheel1"
+             android:id="@+id/cv8"
+             android:layout_marginHorizontal="3dp"
+             android:onClick="selectcolor"
+             />
+
+         <ImageView
+             android:layout_width="40dp"
+             android:layout_height="35dp"
+             android:id="@+id/ci8"
+             android:src="@drawable/circle"
+             android:visibility="gone"
+             android:layout_gravity="center" />
+      </FrameLayout>
+
 
 
 

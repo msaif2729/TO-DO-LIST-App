@@ -39,7 +39,7 @@ public class Task extends AppCompatActivity {
 
         for(int i=1;i<=7;i++)
         {
-            list.add(new MyTaskList("Mobile Application","I want to develop some mobile application for completion of my codsoft intern","18/6/2024","06:20","HIGH",arr[i-1],"c"+String.valueOf(i)));
+            list.add(new MyTaskList("Mobile Application","I want to develop some mobile application for completion of my codsoft intern","18/6/2024","06:20","HIGH",arr[i-1],R.color.c2));
         }
 
         recycle.setAdapter(adapter);

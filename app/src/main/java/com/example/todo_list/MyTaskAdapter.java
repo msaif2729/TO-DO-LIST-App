@@ -1,6 +1,8 @@
 package com.example.todo_list;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
@@ -49,6 +51,14 @@ public class MyTaskAdapter extends RecyclerView.Adapter<MyTaskAdapter.ViewHolder
                 @Override
                 public void onClick(View view) {
                     Toast.makeText(itemView.getContext(), taskname.getText(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(itemView.getContext(), Task_Desc.class);
+                    intent.putExtra("tdname",taskname.getText());
+                    intent.putExtra("tddate",taskdate.getText());
+                    intent.putExtra("tdtime",tasktime.getText());
+                    intent.putExtra("tddesc",taskdesc.getText());
+                    intent.putExtra("tdprio",taskpriority.getText());
+                    intent.putExtra("tdstatus",taskstatus.getText());
+                    itemView.getContext().startActivity(intent);
                 }
             });
 
@@ -76,10 +86,8 @@ public class MyTaskAdapter extends RecyclerView.Adapter<MyTaskAdapter.ViewHolder
         holder.taskdate.setText(lists.get(position).getTaskdate());
         holder.tasktime.setText(lists.get(position).getTasktime());
         holder.taskstatus.setText(lists.get(position).getTaskstatus());
-        String colorName = lists.get(position).getTaskcolor();
-        int color = ResourceUtils.getColorInt(context, colorName);
-        holder.descpart.getBackground().setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
-        holder.statuspart.getBackground().setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
+        holder.descpart.setBackgroundTintList(ColorStateList.valueOf(lists.get(position).getTaskcolor()));
+        holder.statuspart.setBackgroundTintList(ColorStateList.valueOf(lists.get(position).getTaskcolor()));
 
 
     }
