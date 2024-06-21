@@ -23,13 +23,11 @@
         <activity
             android:name=".AddTask"
             android:exported="false"
-            android:parentActivityName=".Home"
-            android:theme="@style/AppTheme1" />
+            android:parentActivityName=".Home" />
         <activity
             android:name=".Task"
             android:exported="false"
-            android:parentActivityName=".Home"
-            android:theme="@style/AppTheme1" />
+            android:parentActivityName=".Home" />
         <activity
             android:name=".Home"
             android:exported="false" />

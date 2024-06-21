@@ -1,359 +1,404 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddTask"
-    android:background="@color/white"
-    android:padding="15dp">
+    >
 
-   <TextView
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="Task Name"
-      android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-      android:id="@+id/ttname"
-      />
-
-
-   <EditText
+   <androidx.coordinatorlayout.widget.CoordinatorLayout
        android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:id="@+id/taskname"
-       android:hint="Enter Task Name"
-       android:paddingVertical="15dp"
-       android:paddingHorizontal="8dp"
-       android:background="@drawable/edittextback"
-       android:layout_below="@id/ttname"
-       android:layout_marginTop="5dp"
-       />
-
-
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:weightSum="2"
-       android:layout_below="@id/taskname"
-       android:orientation="horizontal"
-       android:id="@+id/l1">
-
-
-   <TextView
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="Date"
-       android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-       android:id="@+id/ttd"
-       android:layout_marginTop="20dp"
-       android:layout_below="@id/taskname"
-       android:layout_weight="1"
-
-       />
-   <TextView
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="Time"
-       android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-       android:id="@+id/ttt"
-       android:layout_marginTop="20dp"
-       android:layout_below="@id/taskname"
-       android:layout_weight="1"
-       />
-
-
-   </LinearLayout>
-
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-      android:weightSum="2"
-       android:layout_below="@id/l1"
-       android:layout_marginTop="5dp"
-       android:id="@+id/l2"
+       android:layout_height="match_parent"
       >
-      <EditText
+      <com.google.android.material.appbar.AppBarLayout
+          android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:id="@+id/taskdate"
-          android:layout_width="wrap_content"
-          android:hint="Select Date"
-          android:paddingVertical="15dp"
-          android:paddingHorizontal="8dp"
-          android:background="@drawable/edittextback"
-          android:layout_below="@id/ttd"
-          android:layout_weight="1"
-          android:drawableEnd="@drawable/calendar"
-          android:layout_marginEnd="10dp"
+          android:background="@color/colorPrimary"
+          android:id="@+id/appbar"
+          app:liftOnScrollColor="@color/lightgray"
+          >
+         <com.google.android.material.appbar.MaterialToolbar
+             android:id="@+id/topbar"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             app:title="Add Task"
+             app:titleTextColor="@color/white"
+             app:navigationIcon="@drawable/arrow"
+             app:navigationIconTint="@color/white"
+             app:titleCentered="true"
+             />
+      </com.google.android.material.appbar.AppBarLayout>
 
-          />
-      <EditText
-          android:layout_height="wrap_content"
-          android:id="@+id/tasktime"
-          android:layout_width="wrap_content"
-          android:layout_weight="1"
-          android:hint="Select Time"
-          android:paddingVertical="15dp"
-          android:paddingHorizontal="8dp"
-          android:background="@drawable/edittextback"
-          android:drawableEnd="@drawable/clock"
-          />
-   </LinearLayout>
-
-
-
-   <TextView
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:text="Task Description"
-       android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-       android:id="@+id/ttdes"
-       android:layout_marginTop="10dp"
-       android:layout_below="@id/l2"
-       />
-
-
-   <EditText
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:id="@+id/taskdesc"
-       android:hint="Enter Task Description"
-       android:paddingVertical="15dp"
-       android:paddingHorizontal="8dp"
-       android:background="@drawable/edittextback"
-       android:layout_below="@id/ttdes"
-       android:layout_marginTop="5dp"
-       android:inputType="textMultiLine"
-       android:lines="5"
-       android:gravity="top|start"
-       />
-
-   <TextView
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:text="Task Priotity"
-       android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-       android:id="@+id/ttp"
-       android:layout_marginTop="10dp"
-       android:layout_below="@id/taskdesc"
-       />
-
-   <Spinner
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-      android:layout_below="@id/ttp"
-      android:id="@+id/taskpriority"
-       android:layout_marginTop="5dp"
-       android:autofillHints="Select task Priority"/>
-
-   <TextView
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-      android:text="Color"
-      android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-      android:layout_below="@id/taskpriority"
-      android:layout_marginTop="10dp"
-       android:id="@+id/tc"
-      />
-
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-      android:id="@+id/l3"
-      android:layout_below="@id/tc"
-      android:layout_marginTop="5dp"
-       android:orientation="horizontal"
-       android:gravity="center">
-
-      <FrameLayout
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content">
-
-         <!-- First View and ImageView pair -->
-         <View
-             android:layout_width="35dp"
-             android:layout_height="35dp"
-             android:background="@drawable/colorback"
-             android:backgroundTint="@color/c1"
-             android:id="@+id/cv1"
-             android:layout_marginHorizontal="3dp"
-             android:onClick="selectcolor" />
-         <ImageView
-             android:layout_width="40dp"
-             android:layout_height="35dp"
-             android:id="@+id/ci1"
-             android:src="@drawable/circle"
-             android:visibility="gone"
-             android:layout_gravity="center" />
-      </FrameLayout>
-
-      <FrameLayout
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content">
-
-         <!-- Second View and ImageView pair -->
-         <View
-             android:layout_width="35dp"
-             android:layout_height="35dp"
-             android:background="@drawable/colorback"
-             android:backgroundTint="@color/c2"
-             android:id="@+id/cv2"
-             android:layout_marginHorizontal="3dp"
-             android:onClick="selectcolor" />
-         <ImageView
-             android:layout_width="40dp"
-             android:layout_height="35dp"
-             android:id="@+id/ci2"
-             android:src="@drawable/circle"
-             android:visibility="gone"
-             android:layout_gravity="center" />
-      </FrameLayout>
-
-      <FrameLayout
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content">
-
-         <!-- Third View and ImageView pair -->
-         <View
-             android:layout_width="35dp"
-             android:layout_height="35dp"
-             android:background="@drawable/colorback"
-             android:backgroundTint="@color/c3"
-             android:id="@+id/cv3"
-             android:layout_marginHorizontal="3dp"
-             android:onClick="selectcolor" />
-         <ImageView
-             android:layout_width="40dp"
-             android:layout_height="35dp"
-             android:id="@+id/ci3"
-             android:src="@drawable/circle"
-             android:visibility="gone"
-             android:layout_gravity="center" />
-      </FrameLayout>
-
-      <FrameLayout
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content">
-
-         <!-- Fourth View and ImageView pair -->
-         <View
-             android:layout_width="35dp"
-             android:layout_height="35dp"
-             android:background="@drawable/colorback"
-             android:backgroundTint="@color/c4"
-             android:id="@+id/cv4"
-             android:layout_marginHorizontal="3dp"
-             android:onClick="selectcolor" />
-         <ImageView
-             android:layout_width="40dp"
-             android:layout_height="35dp"
-             android:id="@+id/ci4"
-             android:src="@drawable/circle"
-             android:visibility="gone"
-             android:layout_gravity="center" />
-      </FrameLayout>
-
-      <FrameLayout
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content">
-
-         <!-- Fifth View and ImageView pair -->
-         <View
-             android:layout_width="35dp"
-             android:layout_height="35dp"
-             android:background="@drawable/colorback"
-             android:backgroundTint="@color/c5"
-             android:id="@+id/cv5"
-             android:layout_marginHorizontal="3dp"
-             android:onClick="selectcolor" />
-         <ImageView
-             android:layout_width="40dp"
-             android:layout_height="35dp"
-             android:id="@+id/ci5"
-             android:src="@drawable/circle"
-             android:visibility="gone"
-             android:layout_gravity="center" />
-      </FrameLayout>
-
-      <FrameLayout
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content">
-
-         <!-- Sixth View and ImageView pair -->
-         <View
-             android:layout_width="35dp"
-             android:layout_height="35dp"
-             android:background="@drawable/colorback"
-             android:backgroundTint="@color/c6"
-             android:id="@+id/cv6"
-             android:layout_marginHorizontal="3dp"
-             android:onClick="selectcolor" />
-         <ImageView
-             android:layout_width="40dp"
-             android:layout_height="35dp"
-             android:id="@+id/ci6"
-             android:src="@drawable/circle"
-             android:visibility="gone"
-             android:layout_gravity="center" />
-      </FrameLayout>
-
-      <FrameLayout
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content">
-
-         <!-- Seventh View and ImageView pair -->
-         <View
-             android:layout_width="35dp"
-             android:layout_height="35dp"
-             android:background="@drawable/colorback"
-             android:backgroundTint="@color/c7"
-             android:id="@+id/cv7"
-             android:layout_marginHorizontal="3dp"
-             android:onClick="selectcolor" />
-         <ImageView
-             android:layout_width="40dp"
-             android:layout_height="35dp"
-             android:id="@+id/ci7"
-             android:src="@drawable/circle"
-             android:visibility="gone"
-             android:layout_gravity="center" />
-      </FrameLayout>
-
-      <FrameLayout
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content">
-
-         <!-- Seventh View and ImageView pair -->
-         <View
-             android:layout_width="35dp"
-             android:layout_height="35dp"
-             android:background="@drawable/colorwheel1"
-             android:id="@+id/cv8"
-             android:layout_marginHorizontal="3dp"
-             android:onClick="selectcolor"
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@color/white"
+          android:padding="15dp"
+         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+         >
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Task Name"
+             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+             android:id="@+id/ttname"
              />
 
-         <ImageView
-             android:layout_width="40dp"
-             android:layout_height="35dp"
-             android:id="@+id/ci8"
-             android:src="@drawable/circle"
-             android:visibility="gone"
-             android:layout_gravity="center" />
-      </FrameLayout>
+
+         <EditText
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/taskname"
+             android:hint="Enter Task Name"
+             android:paddingVertical="15dp"
+             android:paddingHorizontal="8dp"
+             android:background="@drawable/edittextback"
+             android:layout_below="@id/ttname"
+             android:textColorHint="@color/gray"
+             android:layout_marginTop="5dp"
+             />
+
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:weightSum="2"
+             android:layout_below="@id/taskname"
+             android:orientation="horizontal"
+             android:id="@+id/l1">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:id="@+id/ttd"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/taskname"
+                android:layout_weight="1"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:id="@+id/ttt"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/taskname"
+                android:layout_weight="1"
+                />
+
+
+         </LinearLayout>
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:weightSum="2"
+             android:layout_below="@id/l1"
+             android:layout_marginTop="5dp"
+             android:id="@+id/l2"
+             >
+            <EditText
+                android:layout_height="wrap_content"
+                android:id="@+id/taskdate"
+                android:layout_width="wrap_content"
+                android:hint="Select Date"
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="8dp"
+                android:background="@drawable/edittextback"
+                android:layout_below="@id/ttd"
+                android:layout_weight="1"
+                android:drawableEnd="@drawable/calendar"
+                android:layout_marginEnd="10dp"
+                android:textColorHint="@color/gray"
+                android:clickable="true"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                />
+            <EditText
+                android:layout_height="wrap_content"
+                android:id="@+id/tasktime"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:hint="Select Time"
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="8dp"
+                android:background="@drawable/edittextback"
+                android:drawableEnd="@drawable/clock"
+                android:textColorHint="@color/gray"
+                android:clickable="true"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                />
+         </LinearLayout>
+
+
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Task Description"
+             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+             android:id="@+id/ttdes"
+             android:layout_marginTop="10dp"
+             android:layout_below="@id/l2"
+             />
+
+
+         <EditText
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/taskdesc"
+             android:hint="Enter Task Description"
+             android:paddingVertical="15dp"
+             android:paddingHorizontal="8dp"
+             android:background="@drawable/edittextback"
+             android:layout_below="@id/ttdes"
+             android:layout_marginTop="5dp"
+             android:inputType="textMultiLine"
+             android:lines="5"
+             android:gravity="top|start"
+             android:textColorHint="@color/gray"
+             />
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Task Priotity"
+             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+             android:id="@+id/ttp"
+             android:layout_marginTop="10dp"
+             android:layout_below="@id/taskdesc"
+             />
+
+         <Spinner
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@id/ttp"
+             android:id="@+id/taskpriority"
+             android:theme="@style/CustomSpinnerDropdownItem"
+             android:layout_marginTop="5dp"
+             android:autofillHints="Select task Priority"/>
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Color"
+             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+             android:layout_below="@id/taskpriority"
+             android:layout_marginTop="10dp"
+             android:id="@+id/tc"
+             />
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/l3"
+             android:layout_below="@id/tc"
+             android:layout_marginTop="5dp"
+             android:orientation="horizontal"
+             android:gravity="center">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+               <!-- First View and ImageView pair -->
+               <View
+                   android:layout_width="35dp"
+                   android:layout_height="35dp"
+                   android:background="@drawable/colorback"
+                   android:backgroundTint="@color/c1"
+                   android:id="@+id/cv1"
+                   android:layout_marginHorizontal="3dp"
+                   android:onClick="selectcolor" />
+               <ImageView
+                   android:layout_width="40dp"
+                   android:layout_height="35dp"
+                   android:id="@+id/ci1"
+                   android:src="@drawable/circle"
+                   android:visibility="gone"
+                   android:layout_gravity="center" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+               <!-- Second View and ImageView pair -->
+               <View
+                   android:layout_width="35dp"
+                   android:layout_height="35dp"
+                   android:background="@drawable/colorback"
+                   android:backgroundTint="@color/c2"
+                   android:id="@+id/cv2"
+                   android:layout_marginHorizontal="3dp"
+                   android:onClick="selectcolor" />
+               <ImageView
+                   android:layout_width="40dp"
+                   android:layout_height="35dp"
+                   android:id="@+id/ci2"
+                   android:src="@drawable/circle"
+                   android:visibility="gone"
+                   android:layout_gravity="center" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+               <!-- Third View and ImageView pair -->
+               <View
+                   android:layout_width="35dp"
+                   android:layout_height="35dp"
+                   android:background="@drawable/colorback"
+                   android:backgroundTint="@color/c3"
+                   android:id="@+id/cv3"
+                   android:layout_marginHorizontal="3dp"
+                   android:onClick="selectcolor" />
+               <ImageView
+                   android:layout_width="40dp"
+                   android:layout_height="35dp"
+                   android:id="@+id/ci3"
+                   android:src="@drawable/circle"
+                   android:visibility="gone"
+                   android:layout_gravity="center" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+               <!-- Fourth View and ImageView pair -->
+               <View
+                   android:layout_width="35dp"
+                   android:layout_height="35dp"
+                   android:background="@drawable/colorback"
+                   android:backgroundTint="@color/c4"
+                   android:id="@+id/cv4"
+                   android:layout_marginHorizontal="3dp"
+                   android:onClick="selectcolor" />
+               <ImageView
+                   android:layout_width="40dp"
+                   android:layout_height="35dp"
+                   android:id="@+id/ci4"
+                   android:src="@drawable/circle"
+                   android:visibility="gone"
+                   android:layout_gravity="center" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+               <!-- Fifth View and ImageView pair -->
+               <View
+                   android:layout_width="35dp"
+                   android:layout_height="35dp"
+                   android:background="@drawable/colorback"
+                   android:backgroundTint="@color/c5"
+                   android:id="@+id/cv5"
+                   android:layout_marginHorizontal="3dp"
+                   android:onClick="selectcolor" />
+               <ImageView
+                   android:layout_width="40dp"
+                   android:layout_height="35dp"
+                   android:id="@+id/ci5"
+                   android:src="@drawable/circle"
+                   android:visibility="gone"
+                   android:layout_gravity="center" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+               <!-- Sixth View and ImageView pair -->
+               <View
+                   android:layout_width="35dp"
+                   android:layout_height="35dp"
+                   android:background="@drawable/colorback"
+                   android:backgroundTint="@color/c6"
+                   android:id="@+id/cv6"
+                   android:layout_marginHorizontal="3dp"
+                   android:onClick="selectcolor" />
+               <ImageView
+                   android:layout_width="40dp"
+                   android:layout_height="35dp"
+                   android:id="@+id/ci6"
+                   android:src="@drawable/circle"
+                   android:visibility="gone"
+                   android:layout_gravity="center" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+               <!-- Seventh View and ImageView pair -->
+               <View
+                   android:layout_width="35dp"
+                   android:layout_height="35dp"
+                   android:background="@drawable/colorback"
+                   android:backgroundTint="@color/c7"
+                   android:id="@+id/cv7"
+                   android:layout_marginHorizontal="3dp"
+                   android:onClick="selectcolor" />
+               <ImageView
+                   android:layout_width="40dp"
+                   android:layout_height="35dp"
+                   android:id="@+id/ci7"
+                   android:src="@drawable/circle"
+                   android:visibility="gone"
+                   android:layout_gravity="center" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+               <!-- Seventh View and ImageView pair -->
+               <View
+                   android:layout_width="35dp"
+                   android:layout_height="35dp"
+                   android:background="@drawable/colorwheel1"
+                   android:id="@+id/cv8"
+                   android:layout_marginHorizontal="3dp"
+                   android:onClick="selectcolor"
+                   />
+
+               <ImageView
+                   android:layout_width="40dp"
+                   android:layout_height="35dp"
+                   android:id="@+id/ci8"
+                   android:src="@drawable/circle"
+                   android:visibility="gone"
+                   android:layout_gravity="center" />
+            </FrameLayout>
 
 
 
 
-   </LinearLayout>
+         </LinearLayout>
 
-   <Button
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-      android:text="ADD TASK"
-      android:background="@drawable/button"
-      android:layout_below="@id/l3"
-      android:layout_marginTop="18dp"
-      android:id="@+id/addtask"
-      />
+         <Button
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="ADD TASK"
+             android:background="@drawable/button"
+             android:layout_below="@id/l3"
+             android:layout_marginTop="18dp"
+             android:id="@+id/addtask"
+             />
+      </RelativeLayout>
 
-</RelativeLayout>
+
+   </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

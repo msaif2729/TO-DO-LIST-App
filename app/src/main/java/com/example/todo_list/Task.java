@@ -6,7 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
+
+import com.google.android.material.appbar.MaterialToolbar;
 
 import java.util.ArrayList;
 
@@ -17,6 +20,9 @@ public class Task extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView.Adapter adapter;
     private ArrayList<MyTaskList> list;
+    private MaterialToolbar topbar;
+
+
 
 
     @Override
@@ -24,8 +30,20 @@ public class Task extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task);
 
+        topbar = (MaterialToolbar) findViewById(R.id.topbar);
+
+
         String title = getIntent().getStringExtra("title");
-        setTitle(title);
+        topbar.setTitle(title);
+
+        topbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Task.this, Home.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
         recycle = (RecyclerView) findViewById(R.id.recycle);
