@@ -3,8 +3,10 @@ package com.example.todo_list;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,23 +18,36 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class MyTaskAdapter extends RecyclerView.Adapter<MyTaskAdapter.ViewHolder> {
-    Context context;
+    public Context context;
 
     List<MyTaskList> lists;
 
-    public MyTaskAdapter(Context context, List<MyTaskList> myTaskLists) {
+    public static Parentfinish parent;
+
+
+    public MyTaskAdapter(Context context, List<MyTaskList> myTaskLists,Parentfinish parent) {
         this.context = context;
         lists = myTaskLists;
+        MyTaskAdapter.parent = parent;
+
+    }
+
+    public interface Parentfinish
+    {
+        public void finishparemt();
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder{
 
         private TextView taskname,taskdesc,taskdate,tasktime,taskpriority,taskstatus;
         private RelativeLayout descpart,statuspart;
+        public DatabaseHandler databaseHandler;
+        public LocalData localData;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -46,27 +61,45 @@ public class MyTaskAdapter extends RecyclerView.Adapter<MyTaskAdapter.ViewHolder
             taskstatus = itemView.findViewById(R.id.taskstatus);
             descpart = itemView.findViewById(R.id.descpart);
             statuspart = itemView.findViewById(R.id.statuspart);
+            localData = new LocalData(itemView.getContext());
+            databaseHandler = new DatabaseHandler(itemView.getContext());
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Toast.makeText(itemView.getContext(), taskname.getText(), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(itemView.getContext(), Task_Desc.class);
-                    intent.putExtra("tdname",taskname.getText());
-                    intent.putExtra("tddate",taskdate.getText());
-                    intent.putExtra("tdtime",tasktime.getText());
-                    intent.putExtra("tddesc",taskdesc.getText());
-                    intent.putExtra("tdprio",taskpriority.getText());
-                    intent.putExtra("tdstatus",taskstatus.getText());
-                    itemView.getContext().startActivity(intent);
+                    Cursor id = databaseHandler.getTaskId(localData.getsession("key_uname"),taskname.getText().toString(),taskdesc.getText().toString());
+                    while (id.moveToNext())
+                    {
+                        intent.putExtra("tid",Integer.parseInt(id.getString(0)));
+                        intent.putExtra("parentactivity",view.getContext().toString());
+                        Log.d("Mohammed Saif 1 :", view.getContext().toString());
+                        itemView.getContext().startActivity(intent);
+                        MyTaskAdapter.parent.finishparemt();
+                    }
+
                 }
             });
 
+//            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+//                @Override
+//                public boolean onLongClick(View view) {
+
+//                    databaseHandler.deletetask(localData.getsession("key_uname"),getAdapterPosition()+1);
+//
+//                    return false;
+//                }
+//            });
 
         }
 
 
+
+
+
     }
+
 
     @Override
     public MyTaskAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -91,6 +124,9 @@ public class MyTaskAdapter extends RecyclerView.Adapter<MyTaskAdapter.ViewHolder
 
 
     }
+
+
+
 
 
 

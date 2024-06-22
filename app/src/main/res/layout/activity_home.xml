@@ -63,23 +63,23 @@
 <!--                    android:paddingHorizontal="10dp"-->
 <!--                    android:textColor="@color/black"-->
 <!--                    />-->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Search Task"
-                    android:id="@+id/searcht"
-                    app:startIconDrawable="@android:drawable/ic_menu_search"
-                    app:startIconTint="@color/colorPrimary"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="10dp"
-                    >
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
-                        android:textColor="@color/black"
-                        android:id="@+id/search"/>
-                </com.google.android.material.textfield.TextInputLayout>
+<!--                <com.google.android.material.textfield.TextInputLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="Search Task"-->
+<!--                    android:id="@+id/searcht"-->
+<!--                    app:startIconDrawable="@android:drawable/ic_menu_search"-->
+<!--                    app:startIconTint="@color/colorPrimary"-->
+<!--                    android:layout_marginHorizontal="10dp"-->
+<!--                    android:layout_marginVertical="10dp"-->
+<!--                    >-->
+<!--                    <com.google.android.material.textfield.TextInputEditText-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:id="@+id/search"/>-->
+<!--                </com.google.android.material.textfield.TextInputLayout>-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -213,7 +213,7 @@
 
                     <RelativeLayout
                         android:id="@+id/relative"
-                        android:layout_width="397dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/recycleback"
                         android:backgroundTint="@color/lightblue"
@@ -229,18 +229,7 @@
                             android:textColor="@color/black"
                             android:textSize="18dp" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/taks1"
-                            android:fontFamily="@font/ubuntumedium"
-                            android:gravity="center"
-                            android:text="Click here to create One"
-                            android:textColor="@color/black"
-                            android:textSize="18dp"
 
-
-                            />
 
                     </RelativeLayout>
 

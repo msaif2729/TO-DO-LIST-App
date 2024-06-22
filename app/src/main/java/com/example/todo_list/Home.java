@@ -13,7 +13,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.Html;
+import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -23,10 +25,11 @@ import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
 
-public class Home extends AppCompatActivity {
+public class Home extends AppCompatActivity implements MyTaskAdapter.Parentfinish {
 
     private MaterialToolbar topbar;
     private DrawerLayout drawerLayout;
@@ -36,6 +39,8 @@ public class Home extends AppCompatActivity {
     private  RecyclerView.Adapter myadapter;
     private RecyclerView.LayoutManager layoutManager;
 
+
+
     private ArrayList<MyTaskList> taskLists;
 
     private RelativeLayout relativeLayout,r1,r2,r3;
@@ -43,6 +48,7 @@ public class Home extends AppCompatActivity {
     private LocalData localData;
     private String name,uname,pass;
     private DatabaseHandler databaseHandler;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,13 +75,13 @@ public class Home extends AppCompatActivity {
 
 
 
-        Intent intent = getIntent();
         name = localData.getsession("key_name");
         uname = localData.getsession("key_uname");
         pass = localData.getsession("key_pass");
         welcometxt.setText("Hi "+name);
         header.setText(name);
         subheader.setText(uname);
+
 
 
 
@@ -113,16 +119,18 @@ public class Home extends AppCompatActivity {
                    intent.putExtra("title","FAVOURITE TASK'S");
                    startActivityForResult(intent,0);
                    drawerLayout.close();
+                   finish();
 
                } else if (item.getItemId()==R.id.add) {
                    Toast.makeText(Home.this, "Add Task", Toast.LENGTH_SHORT).show();
                    Intent intent = new Intent(Home.this, AddTask.class);
                    startActivityForResult(intent,0);
                    drawerLayout.close();
+                   finish();
                }
                else if(item.getItemId()==R.id.logout)
                {
-                   Toast.makeText(Home.this, "Logout", Toast.LENGTH_SHORT).show();
+//                   Toast.makeText(Home.this, "Logout", Toast.LENGTH_SHORT).show();
                    AlertDialog.Builder builder = new AlertDialog.Builder(Home.this,R.style.CustomDatePickerDialog);
                    builder.setMessage(Html.fromHtml("<font color='#00000' style='bold' >Do you want to LOGOUT ?</font>"));
                    builder.setTitle(Html.fromHtml("<font color='#2b8ad2'>Logout! </font>"));
@@ -167,23 +175,34 @@ public class Home extends AppCompatActivity {
         relativeLayout.setVisibility(View.GONE);
         recycleview.setVisibility(View.VISIBLE);
 
-        myadapter = new MyTaskAdapter(this,taskLists);
+        myadapter = new MyTaskAdapter(this,taskLists,Home.this);
 
         String[] arr = {"To-Do","In-Progress","Done","To-Do","In-Progress","Done","To-Do"};
 
-        Cursor res = databaseHandler.getalltask();
-        if(res!=null)
+        Cursor res = databaseHandler.getalltask(localData.getsession("key_uname"));
+        if(res.getCount()>0)
         {
             while (res.moveToNext())
             {
+                String desc;
+                if(res.getString(3).length()>50)
+                {
+                    desc = res.getString(3).substring(0,res.getString(3).length()-10)+"............";
+                }
+                else {
+                    desc = res.getString(3);
+                }
                 taskLists.add(new MyTaskList(res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getString(7),Integer.parseInt(res.getString(8))));
                 recycleview.setVisibility(View.VISIBLE);
                 relativeLayout.setVisibility(View.GONE);
+
             }
+//            Toast.makeText(this, "Visible", Toast.LENGTH_SHORT).show();
         }
         else {
             recycleview.setVisibility(View.GONE);
             relativeLayout.setVisibility(View.VISIBLE);
+//            Toast.makeText(this, "Gone", Toast.LENGTH_SHORT).show();
         }
 
 
@@ -200,12 +219,15 @@ public class Home extends AppCompatActivity {
         {
             intent.putExtra("title","TO-DO TASK'S");
             startActivity(intent);
+            finish();
         } else if (id==R.id.r2) {
             intent.putExtra("title","IN-PROGRESS TASK'S");
             startActivity(intent);
+            finish();
         } else if (id==R.id.r3) {
             intent.putExtra("title","TASK'S DONE");
             startActivity(intent);
+            finish();
         }
     }
 
@@ -216,5 +238,10 @@ public class Home extends AppCompatActivity {
         if(requestCode==0)
             nav.setCheckedItem(R.id.home);
 
+    }
+
+    @Override
+    public void finishparemt() {
+        finish();
     }
 }

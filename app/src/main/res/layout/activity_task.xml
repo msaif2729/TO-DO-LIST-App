@@ -30,19 +30,56 @@
                 />
         </com.google.android.material.appbar.AppBarLayout>
 
-        <RelativeLayout
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@color/white"-->
+<!--            android:padding="15dp"-->
+<!--            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"-->
+<!--            >-->
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/recycle"-->
+<!--                />-->
+<!--        </RelativeLayout>-->
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white"
-            android:padding="15dp"
+            android:padding="10dp"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+
             >
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/recycle"
-                />
-        </RelativeLayout>
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:id="@+id/relative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/recycleback"
+                android:backgroundTint="@color/lightblue"
+                android:padding="60dp">
+
+                <TextView
+                    android:id="@+id/taks1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntumedium"
+                    android:gravity="center"
+                    android:text="You don't have any task!!"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+
+
+            </RelativeLayout>
+
+        </FrameLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

@@ -8,7 +8,9 @@ import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -16,6 +18,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -41,6 +44,7 @@ public class AddTask extends AppCompatActivity {
     private MaterialToolbar topbar;
     String selectedItem;
     int selectedcolor = 0,y,m,d,min,hr;
+    private TextView toasttxt;
 
 
     View cv1,cv2,cv3,cv4,cv5,cv6,cv7,cv8;
@@ -175,11 +179,11 @@ public class AddTask extends AppCompatActivity {
 //                    Toast.makeText(AddTask.this, localData.getsession("key_uname")+"", Toast.LENGTH_SHORT).show();
 //                    Log.d("Mohammed Saif",localData.getsession("key_uname")+" : "+selectedItem+String.valueOf(selectedcolor));
 //                    addtask(String tuser,String tname,String tdesc,String tdate, String ttime,String tprio,String  tstat,String tcolor)
-                    String res = databaseHandler.addtask(localData.getsession("key_uname"),taskname.getText().toString(),taskdesc.getText().toString(),taskdate.getText().toString(),tasktime.getText().toString(),selectedItem,"To-Do",String.valueOf(selectedcolor));
+                    String res = databaseHandler.addtask(localData.getsession("key_uname"),taskname.getText().toString(),taskdesc.getText().toString(),taskdate.getText().toString(),tasktime.getText().toString(),selectedItem,"To-Do",String.valueOf(selectedcolor),"notfav");
                     Log.d("Mohammed Saif",res);
                     if(res.equals("successfully"))
                     {
-                        Toast.makeText(AddTask.this, "Task Added Successfullt", Toast.LENGTH_SHORT).show();
+                        ShowToast.showToast(AddTask.this,"Task Added Successfully");
                         Intent intent = new Intent(AddTask.this, Home.class);
                         startActivity(intent);
                         finish();
@@ -212,42 +216,91 @@ public class AddTask extends AppCompatActivity {
             ci1.setVisibility(View.VISIBLE);
             selectedcolor = color;
 //            Toast.makeText(this,String.valueOf(color), Toast.LENGTH_SHORT).show();
+            ci2.setVisibility(View.GONE);
+            ci3.setVisibility(View.GONE);
+            ci4.setVisibility(View.GONE);
+            ci5.setVisibility(View.GONE);
+            ci6.setVisibility(View.GONE);
+            ci7.setVisibility(View.GONE);
+            ci8.setVisibility(View.GONE);
 
         } else if (id==R.id.cv2) {
             ColorStateList colorStateList = cv2.getBackgroundTintList();
             int color = colorStateList.getDefaultColor();
             selectedcolor = color;
             ci2.setVisibility(View.VISIBLE);
+            ci1.setVisibility(View.GONE);
+            ci3.setVisibility(View.GONE);
+            ci4.setVisibility(View.GONE);
+            ci5.setVisibility(View.GONE);
+            ci6.setVisibility(View.GONE);
+            ci7.setVisibility(View.GONE);
+            ci8.setVisibility(View.GONE);
 
         }else if (id==R.id.cv3) {
             ColorStateList colorStateList = cv3.getBackgroundTintList();
             int color = colorStateList.getDefaultColor();
             selectedcolor = color;
             ci3.setVisibility(View.VISIBLE);
+            ci2.setVisibility(View.GONE);
+            ci1.setVisibility(View.GONE);
+            ci4.setVisibility(View.GONE);
+            ci5.setVisibility(View.GONE);
+            ci6.setVisibility(View.GONE);
+            ci7.setVisibility(View.GONE);
+            ci8.setVisibility(View.GONE);
 
         }else if (id==R.id.cv4) {
             ColorStateList colorStateList = cv4.getBackgroundTintList();
             int color = colorStateList.getDefaultColor();
             selectedcolor = color;
             ci4.setVisibility(View.VISIBLE);
+            ci2.setVisibility(View.GONE);
+            ci3.setVisibility(View.GONE);
+            ci1.setVisibility(View.GONE);
+            ci5.setVisibility(View.GONE);
+            ci6.setVisibility(View.GONE);
+            ci7.setVisibility(View.GONE);
+            ci8.setVisibility(View.GONE);
 
         }else if (id==R.id.cv5) {
             ColorStateList colorStateList = cv5.getBackgroundTintList();
             int color = colorStateList.getDefaultColor();
             selectedcolor = color;
             ci5.setVisibility(View.VISIBLE);
+            ci2.setVisibility(View.GONE);
+            ci3.setVisibility(View.GONE);
+            ci4.setVisibility(View.GONE);
+            ci1.setVisibility(View.GONE);
+            ci6.setVisibility(View.GONE);
+            ci7.setVisibility(View.GONE);
+            ci8.setVisibility(View.GONE);
 
         }else if (id==R.id.cv6) {
             ColorStateList colorStateList = cv6.getBackgroundTintList();
             int color = colorStateList.getDefaultColor();
             selectedcolor = color;
             ci6.setVisibility(View.VISIBLE);
+            ci2.setVisibility(View.GONE);
+            ci3.setVisibility(View.GONE);
+            ci4.setVisibility(View.GONE);
+            ci5.setVisibility(View.GONE);
+            ci1.setVisibility(View.GONE);
+            ci7.setVisibility(View.GONE);
+            ci8.setVisibility(View.GONE);
 
         }else if (id==R.id.cv7) {
             ColorStateList colorStateList = cv7.getBackgroundTintList();
             int color = colorStateList.getDefaultColor();
             selectedcolor = color;
             ci7.setVisibility(View.VISIBLE);
+            ci2.setVisibility(View.GONE);
+            ci3.setVisibility(View.GONE);
+            ci4.setVisibility(View.GONE);
+            ci5.setVisibility(View.GONE);
+            ci6.setVisibility(View.GONE);
+            ci1.setVisibility(View.GONE);
+            ci8.setVisibility(View.GONE);
 
         }else if (id==R.id.cv8) {
             final AmbilWarnaDialog colorPickerDialogue = new AmbilWarnaDialog(this, mDefaultColor,
@@ -263,6 +316,13 @@ public class AddTask extends AppCompatActivity {
                             mDefaultColor = color;
                             Toast.makeText(AddTask.this, String.valueOf(color), Toast.LENGTH_SHORT).show();
                             ci8.setVisibility(View.VISIBLE);
+                            ci2.setVisibility(View.GONE);
+                            ci3.setVisibility(View.GONE);
+                            ci4.setVisibility(View.GONE);
+                            ci5.setVisibility(View.GONE);
+                            ci6.setVisibility(View.GONE);
+                            ci7.setVisibility(View.GONE);
+                            ci1.setVisibility(View.GONE);
                             cv8.setBackgroundTintList(ColorStateList.valueOf(mDefaultColor));
                             selectedcolor = color;
                         }
