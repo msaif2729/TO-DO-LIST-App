@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".Profile">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:id="@+id/appbar"
+            >
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Profile"
+                app:titleTextColor="@color/white"
+                app:navigationIcon="@drawable/arrow"
+                app:navigationIconTint="@color/white"
+                app:titleCentered="true"
+                />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:background="@color/white"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            >
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:background="@drawable/viewback"/>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="400dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp">
+                    <ImageView
+                        android:id="@+id/userimg"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/users"
+                        android:padding="1dp"/>
+                </androidx.cardview.widget.CardView>
+
+            </FrameLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/namet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                app:boxBackgroundMode="outline"
+                app:hintTextColor="@color/colorPrimary"
+                app:startIconDrawable="@android:drawable/stat_sys_phone_call"
+                app:startIconTint="@color/colorPrimary"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="20dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/ubuntumedium"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/edittext_design1"
+                    android:textSize="18dp"
+                    android:enabled="false"
+                    android:text="Mohammed Saif Ansari"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/usernamet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                app:boxBackgroundMode="outline"
+                app:hintTextColor="@color/colorPrimary"
+                app:startIconDrawable="@android:drawable/stat_sys_phone_call"
+                app:startIconTint="@color/colorPrimary"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="20dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/ubuntumedium"
+                    android:background="@drawable/edittext_design1"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:enabled="false"
+                    android:text="ansaif2729"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tipassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundMode="outline"
+                android:hint="Password"
+                app:hintTextColor="@color/colorPrimary"
+                app:startIconDrawable="@android:drawable/ic_lock_lock"
+                app:startIconTint="@color/colorPrimary"
+                android:layout_marginVertical="10dp"
+
+                android:layout_marginHorizontal="20dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/ubuntumedium"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/edittext_design1"
+                    android:textSize="18dp"
+                    android:enabled="false"
+                    android:text="\@ns***2705"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+<!--            <Button-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="20dp"-->
+<!--                android:background="@drawable/button"-->
+<!--                android:text="UPDATE PROFILE DATA"-->
+<!--                android:id="@+id/update"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:layout_marginVertical="10dp"-->
+<!--                />-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:text="My Tasks"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="20dp"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="10dp"
+                android:background="@drawable/edittext_design1"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="20dp"
+                >
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/todo"
+                    android:padding="10dp"
+                    android:background="@drawable/todoimg"
+                    android:id="@+id/todoimg"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="5dp"
+                    />
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:text="TO-DO"
+                    android:layout_toRightOf="@id/todoimg"
+                    android:layout_marginStart="20dp"
+                    android:id="@+id/to"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/to"
+                    android:layout_below="@id/to"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                    android:text="Total task : 10"
+                    android:textColor="@color/black"
+                    android:id="@+id/ttotal"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="10dp"
+                android:background="@drawable/edittext_design1"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="20dp"
+                >
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/progress1"
+                    android:padding="10dp"
+                    android:background="@drawable/progimg"
+                    android:id="@+id/progimg"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="5dp"
+                    />
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:text="IN-PROGRESS"
+                    android:layout_toRightOf="@id/progimg"
+                    android:layout_marginStart="20dp"
+                    android:id="@+id/pro"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/pro"
+                    android:layout_below="@id/pro"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                    android:text="Total task : 10"
+                    android:textColor="@color/black"
+                    android:id="@+id/ptotal"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="10dp"
+                android:background="@drawable/edittext_design1"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="20dp"
+                >
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/done1"
+                    android:padding="10dp"
+                    android:background="@drawable/doneimg"
+                    android:id="@+id/doimg"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="5dp"
+                    />
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:text="DONE"
+                    android:layout_toRightOf="@id/doimg"
+                    android:layout_marginStart="20dp"
+                    android:id="@+id/don"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/don"
+                    android:layout_below="@id/don"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                    android:text="Total task : 10"
+                    android:textColor="@color/black"
+                    android:id="@+id/dtotal"
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

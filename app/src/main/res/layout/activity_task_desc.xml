@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Task_Desc"
+    android:background="@color/white">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:id="@+id/appbar"
+            >
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Task Detail"
+                app:titleTextColor="@color/white"
+                app:navigationIcon="@drawable/arrow"
+                app:navigationIconTint="@color/white"
+                app:titleCentered="true"
+                app:menu="@menu/likebtn"
+                />
+        </com.google.android.material.appbar.AppBarLayout>
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="15dp"
+            android:paddingHorizontal="10dp"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Task Name"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:id="@+id/ttdname"
+                />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tdname"
+                android:hint="Enter Task Name"
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="8dp"
+                android:background="@drawable/edittext_design1"
+                android:layout_below="@id/ttdname"
+                android:layout_marginTop="5dp"
+                android:textColorHint="@color/gray"
+                android:enabled="false"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_below="@id/tdname"
+                android:orientation="horizontal"
+                android:id="@+id/l1">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:id="@+id/ttd"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/taskname"
+                    android:layout_weight="1"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:id="@+id/ttt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/taskname"
+                    android:layout_weight="1"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_below="@id/l1"
+                android:layout_marginTop="5dp"
+                android:id="@+id/l2"
+                >
+                <EditText
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tddate"
+                    android:layout_width="wrap_content"
+                    android:hint="Select Date"
+                    android:textColorHint="@color/gray"
+                    android:paddingVertical="15dp"
+                    android:paddingHorizontal="8dp"
+                    android:background="@drawable/edittext_design1"
+                    android:layout_below="@id/ttd"
+                    android:layout_weight="1"
+                    android:drawableEnd="@drawable/calendar"
+                    android:layout_marginEnd="10dp"
+                    android:drawableTint="@color/colorPrimary"
+                    android:enabled="false"
+
+                    />
+                <EditText
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tdtime"
+                    android:textColorHint="@color/gray"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTint="@color/colorPrimary"
+                    android:hint="Select Time"
+                    android:paddingVertical="15dp"
+                    android:paddingHorizontal="8dp"
+                    android:background="@drawable/edittext_design1"
+                    android:drawableEnd="@drawable/clock"
+                    android:enabled="false"
+                    />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Task Description"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:id="@+id/ttdes"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/l2"
+                />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tddesc"
+                android:textColorHint="@color/gray"
+                android:hint="Enter Task Description"
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="8dp"
+                android:background="@drawable/edittext_design1"
+                android:layout_below="@id/ttdes"
+                android:layout_marginTop="5dp"
+                android:inputType="textMultiLine"
+                android:lines="4"
+                android:gravity="top|start"
+                android:enabled="false"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Task Priotity"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:id="@+id/ttp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/tddesc"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tdpriority"
+                android:textColorHint="@color/gray"
+                android:hint="Enter Task Priority"
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="8dp"
+                android:background="@drawable/edittext_design1"
+                android:layout_below="@id/ttp"
+                android:gravity="top|start"
+                android:layout_marginTop="5dp"
+                android:enabled="false"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Task Status"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_below="@id/tdpriority"
+                android:layout_marginTop="10dp"
+                android:id="@+id/tc"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tdstatus"
+                android:textColorHint="@color/gray"
+                android:hint="Enter Task Status"
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="8dp"
+                android:background="@drawable/edittext_design1"
+                android:layout_below="@id/tc"
+                android:gravity="top|start"
+                android:layout_marginTop="5dp"
+                android:enabled="false"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tdstatus"
+                android:text=""
+                android:id="@+id/tdstart"
+                android:layout_weight="1"
+                android:background="@drawable/button"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_below="@id/tdstart"
+                android:orientation="horizontal"
+                android:id="@+id/l4"
+                android:layout_marginTop="10dp">
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EDIT"
+                    android:id="@+id/tdedit"
+                    android:layout_below="@id/taskname"
+                    android:layout_weight="1"
+                    android:background="@drawable/button"
+                    android:layout_marginEnd="3dp"
+                    android:textColor="@color/white"
+                    />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DELETE"
+                    android:id="@+id/tddelete"
+                    android:layout_below="@id/taskname"
+                    android:layout_weight="1"
+                    android:background="@drawable/button"
+                    android:layout_marginStart="3dp"
+                    android:textColor="@color/white"
+                    />
+            </LinearLayout>
+
+
+
+            
+        </RelativeLayout>
+
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+
+
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
