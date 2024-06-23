@@ -27,6 +27,8 @@ public class MyTaskAdapter extends RecyclerView.Adapter<MyTaskAdapter.ViewHolder
 
     List<MyTaskList> lists;
 
+    static List<MyTaskList> list;
+
     public static Parentfinish parent;
 
 
@@ -34,6 +36,7 @@ public class MyTaskAdapter extends RecyclerView.Adapter<MyTaskAdapter.ViewHolder
         this.context = context;
         lists = myTaskLists;
         MyTaskAdapter.parent = parent;
+        MyTaskAdapter.list = myTaskLists;
 
     }
 
@@ -69,7 +72,7 @@ public class MyTaskAdapter extends RecyclerView.Adapter<MyTaskAdapter.ViewHolder
                 public void onClick(View view) {
                     Toast.makeText(itemView.getContext(), taskname.getText(), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(itemView.getContext(), Task_Desc.class);
-                    Cursor id = databaseHandler.getTaskId(localData.getsession("key_uname"),taskname.getText().toString(),taskdesc.getText().toString());
+                    Cursor id = databaseHandler.getTaskId(localData.getsession("key_uname"),MyTaskAdapter.list.get(getAdapterPosition()).getTaskname(),list.get(getAdapterPosition()).getTaskdesc());
                     while (id.moveToNext())
                     {
                         intent.putExtra("tid",Integer.parseInt(id.getString(0)));
@@ -112,9 +115,18 @@ public class MyTaskAdapter extends RecyclerView.Adapter<MyTaskAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull MyTaskAdapter.ViewHolder holder, int position) {
 
+        String desc;
+        if(lists.get(position).getTaskdesc().length()>50)
+        {
+            desc = lists.get(position).getTaskdesc().substring(0,lists.get(position).getTaskdesc().length()-10)+"............";
+        }
+        else {
+            desc = lists.get(position).getTaskdesc();
+        }
+
         holder.itemView.setTag(lists.get(position));
         holder.taskname.setText(lists.get(position).getTaskname());
-        holder.taskdesc.setText(lists.get(position).getTaskdesc());
+        holder.taskdesc.setText(desc);
         holder.taskpriority.setText(lists.get(position).getTaskpriority());
         holder.taskdate.setText(lists.get(position).getTaskdate());
         holder.tasktime.setText(lists.get(position).getTasktime());
