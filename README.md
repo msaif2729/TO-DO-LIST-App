@@ -24,7 +24,6 @@ The To-Do List App is a comprehensive task management application designed to he
 <img src="https://github.com/user-attachments/assets/be57d9b6-a29e-4fed-8395-c0f8f2e2a59e" alt="Edit Task" width="200" style="border: 2px solid #FF000000; margin-right: 15px; margin-bottom: 10px;">
 <img src="https://github.com/user-attachments/assets/b336ce11-2cbc-4677-b8c7-1bfe7aefb35a" alt="Profile" width="200" style="border: 2px solid #FF000000; margin-right: 15px; margin-bottom: 10px;">
 <img src="https://github.com/user-attachments/assets/4d0f2a33-522b-4337-9435-ef685edb6e23" alt="Task Count" width="200" style="border: 2px solid #FF000000; margin-right: 15px; margin-bottom: 10px;">
-<img src="https://github.com/user-attachments/assets/6ab96eaf-6f03-4849-a5b6-7b5692eba39e" alt="Favorites" width="200" style="border: 2px solid #FF000000; margin-right: 15px; margin-bottom: 10px;">
 <img src="https://github.com/user-attachments/assets/5641604d-8e03-4531-bd80-540fa3158b7a" alt="Settings" width="200" style="border: 2px solid #FF000000; margin-right: 15px; margin-bottom: 10px;">
 <img src="https://github.com/user-attachments/assets/5163016d-3fba-46f0-a6e1-783bbdbcc1c0" alt="Logout" width="200" style="border: 2px solid #0000; margin-right: 15px; margin-bottom: 10px;">
 
