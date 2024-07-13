@@ -30,4 +30,4 @@ The To-Do List App is a comprehensive task management application designed to he
 
 ## Clone the repository
  ```bash
- git clone (https://github.com/msaif2729/TO-DO-LIST-App-CodSoft.git)
+ git clone https://github.com/msaif2729/TO-DO-LIST-App-CodSoft.git
